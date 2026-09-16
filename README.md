@@ -26,3 +26,14 @@ AI-assisted DCE review agent for:
 - Better traceability
 - Reduced wrong-source reviews
 - Faster engineering reviews
+
+## Differentiators
+
+Unlike traditional document-review assistants, this agent:
+
+- Confirms governing references before review
+- Applies source precedence rules
+- Detects governing-source conflicts
+- Supports multi-discipline DCE reviews
+- Separates engineering recommendations from engineering authority
+- Escalates decisions requiring specialist review
