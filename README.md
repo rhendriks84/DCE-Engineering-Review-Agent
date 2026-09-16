@@ -1,5 +1,26 @@
 # DCE Engineering Review Agent
 
+## DCE Reviewer Skill
+
+The reusable skill definition is located at:
+
+skills/DCE\-Reviewer\-Skill.md
+
+The skill defines:
+
+- trigger conditions;
+- supported submission types;
+- mandatory reference confirmation;
+- governing\-source precedence;
+- evidence and compliance classifications;
+- revision\-delta review;
+- multidisciplinary interfaces;
+- reviewer authority boundaries;
+- output formats;
+- and final quality checks.
+
+The skill complements the core reviewer instructions and does not replace the authorised DCE engineer’s judgement.
+
 ## Quick Start
 
 - Repository overview: README.md
