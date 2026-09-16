@@ -12,7 +12,7 @@ screenshots/AgentOverview3.png
 
 ### Review Workflow
 
-screenshots/workflow.png
+screenshots/Workflow.png
 
 ### Example Review
 
