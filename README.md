@@ -23,11 +23,13 @@ The skill complements the core reviewer instructions and does not replace the au
 
 ## Quick Start
 
-- Repository overview: README.md
-- Demo scenario: DEMO.md
+- Demo: DEMO.md
 - Architecture: Architecture.md
-- Workflow: docs/Workflow.md
-- Core reviewer instructions: DCE-Reviewer-Prompt.md
+- Workflow: Workflow.md
+- Prompt: prompts/DCE-Reviewer-Prompt.md
+- Skill Definition: skills/DCE-Reviewer-Skill.md
+- Evaluations: evaluations/Review-Evaluation-Criteria.md
+- Architecture Decisions: docs/adr/
 
 ## Purpose
 
