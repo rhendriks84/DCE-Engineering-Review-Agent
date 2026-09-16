@@ -54,27 +54,18 @@ Unlike traditional document-review assistants, this agent:
 * Revision delta analysis
 * Copilot Studio adaptive-card configuration
 
-\## Validation
+## Validation
 
 Run:
-
-
 
 powershell -ExecutionPolicy Bypass -File scripts/validate-repo.ps1
 
 Expected Result:
 
-
-
 Repository validation PASSED
 
-\## Core Reviewer Instructions
-
-
+## Core Reviewer Instructions
 
 The main reviewer instructions are located in:
 
-
-
 DCE-Reviewer-Prompt.md
-
