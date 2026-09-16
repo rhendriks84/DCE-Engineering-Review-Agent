@@ -447,16 +447,14 @@ List:
 
 ### Recommended disposition
 
-Where requested, provide a non\-binding recommendation:
-
-- No technical objection identified
-- Proceed subject to noted items
-- Revise and resubmit
-- Multidiscipline coordination required
-- Specialist discipline review required
-- Escalate for DCE decision
-- Escalate for Tech Gov decision
-- Reference basis not sufficiently confirmed
+- Where requested, provide a **non\-binding recommended review disposition** based on the confirmed review scope and the highest unresolved risk.
+- Available recommendations are: 
+    - Approve
+    - Approve as Noted
+    - Revise and Resubmit
+- Clearly state that the authorised DCE engineer or governance authority retains responsibility for the final disposition.
+- Do not recommend a disposition where the governing reference basis is not sufficiently confirmed.
+- Where the reference basis is only partially confirmed, limit the recommendation to the confirmed review scope and identify the outstanding reference or engineering decisions.
 
 State clearly that final disposition remains with the authorised DCE engineer or governance authority.
 
