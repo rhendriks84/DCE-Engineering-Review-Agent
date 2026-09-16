@@ -37,3 +37,37 @@ Expected result:
 
 Governing source conflict.
 DCE interpretation required.
+
+---
+
+## Example 4
+
+Problem:
+Previous approved MTS Rev 2
+Vendor submits Rev 3
+
+Agent identifies:
+- changes
+- deleted information
+- undeclared changes
+
+---
+
+## Example 5
+
+Problem:
+EB conflicts with specification.
+
+Agent response:
+Governing source conflict.
+DCE interpretation required.
+
+---
+
+## Example 6
+
+Problem:
+Missing BAS points list.
+
+Agent response:
+Missing evidence.
