@@ -69,3 +69,28 @@ Repository validation PASSED
 The main reviewer instructions are located in:
 
 DCE-Reviewer-Prompt.md
+
+## Screenshots
+
+### Agent Overview
+
+#### Agent Overview 1
+screenshots/AgentOverview1.png
+
+#### Agent Overview 2
+screenshots/AgentOverview2.png
+
+#### Agent Overview 3
+screenshots/AgentOverview3.png
+
+### Review Process
+
+#### Review Process 1
+screenshots/ReviewProcess1.png
+
+#### Review Process 2
+screenshots/ReviewProcess2.png
+
+### Workflow
+
+screenshots/Workflow.png
