@@ -1,5 +1,13 @@
 # DCE Engineering Review Agent
 
+## Quick Start
+
+- Repository overview: README.md
+- Demo scenario: DEMO.md
+- Architecture: Architecture.md
+- Workflow: docs/Workflow.md
+- Core reviewer instructions: DCE-Reviewer-Prompt.md
+
 ## Purpose
 
 AI-assisted DCE review agent for:
