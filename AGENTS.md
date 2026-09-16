@@ -6,13 +6,13 @@ This repository documents and governs the DCE Engineering Review Agent, an engin
 
 ## Supported review types
 
-- Master Technical Submittal (MTS)
-- Compliance, Deviations and Exceptions (CDE) forms
-- Deviations and Exceptions forms
-- Technical exception requests
-- Compliance matrices and vendor exception registers
-- Product data and equipment submittals
-- Controls, FAT, FWT, SAT and commissioning packages
+* Master Technical Submittal (MTS)
+* Compliance, Deviations and Exceptions (CDE) forms
+* Deviations and Exceptions forms
+* Technical exception requests
+* Compliance matrices and vendor exception registers
+* Product data and equipment submittals
+* Controls, FAT, FWT, SAT and commissioning packages
 
 ## Supported disciplines
 
@@ -33,32 +33,32 @@ Architectural, civil, structural, fire protection, fire alarm, plumbing, mechani
 
 ## Non-negotiable safeguards
 
-- Do not silently select a BOD, specification revision or project baseline.
-- Do not assume the latest document automatically governs.
-- Do not invent requirements, clauses, values, evidence or precedents.
-- Do not resolve conflicting governing sources by assumption.
-- Do not approve equipment, accept deviations or make the final engineering decision.
-- Do not expose restricted physical-security requirements.
-- Do not classify an item definitively when the governing reference basis is unresolved.
+* Do not silently select a BOD, specification revision or project baseline.
+* Do not assume the latest document automatically governs.
+* Do not invent requirements, clauses, values, evidence or precedents.
+* Do not resolve conflicting governing sources by assumption.
+* Do not approve equipment, accept deviations or make the final engineering decision.
+* Do not expose restricted physical-security requirements.
+* Do not classify an item definitively when the governing reference basis is unresolved.
 
 ## Repository map
 
-- `README.md`: project overview and entry point.
-- `Prompt.md`: core reviewer instructions.
-- `Workflow.md` and `docs/Workflow.md`: review workflow.
-- `Architecture.md` and `docs/Architecture.md`: solution architecture.
-- `Examples.md` or `docs/Examples.md`: expected behaviours and scenarios.
-- `.github/copilot-instructions.md`: repository-wide instructions for GitHub Copilot.
-- `.github/pull_request_template.md`: review checklist for changes.
-- `.github/CODEOWNERS`: default ownership routing.
-- `CONTRIBUTING.md`: contribution and validation requirements.
-- `scripts/validate-repo.ps1`: lightweight repository validation.
+* `README.md`: project overview and entry point.
+* `DCE-Reviewer-Prompt.md`: core reviewer instructions.
+* `Workflow.md` and `docs/Workflow.md`: review workflow.
+* `Architecture.md` and `docs/Architecture.md`: solution architecture.
+* `Examples.md` or `docs/Examples.md`: expected behaviours and scenarios.
+* `.github/copilot-instructions.md`: repository-wide instructions for GitHub Copilot.
+* `.github/pull\_request\_template.md`: review checklist for changes.
+* `.github/CODEOWNERS`: default ownership routing.
+* `CONTRIBUTING.md`: contribution and validation requirements.
+* `scripts/validate-repo.ps1`: lightweight repository validation.
 
 ## Change rules for agents
 
 When modifying this repository:
 
-1. Read `README.md`, `AGENTS.md`, `Prompt.md`, and the architecture and workflow documents first.
+1. Read `README.md`, `AGENTS.md`, `DCE-Reviewer-Prompt.md`, and the architecture and workflow documents first.
 2. Make the smallest coherent change that satisfies the issue.
 3. Preserve the reference-confirmation gate, source precedence and engineer decision boundary.
 4. Update examples when behaviour changes.
@@ -70,9 +70,10 @@ When modifying this repository:
 
 A change is ready when:
 
-- required repository files are present;
-- referenced Markdown links resolve;
-- the reviewer instructions remain internally consistent;
-- no hard-coded default BOD is presented as confirmed without applicability confirmation;
-- examples reflect the current workflow;
-- the validation script passes.
+* required repository files are present;
+* referenced Markdown links resolve;
+* the reviewer instructions remain internally consistent;
+* no hard-coded default BOD is presented as confirmed without applicability confirmation;
+* examples reflect the current workflow;
+* the validation script passes.
+
