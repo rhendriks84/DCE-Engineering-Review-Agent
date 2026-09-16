@@ -37,3 +37,19 @@ Unlike traditional document-review assistants, this agent:
 - Supports multi-discipline DCE reviews
 - Separates engineering recommendations from engineering authority
 - Escalates decisions requiring specialist review
+
+## Roadmap
+
+### Current
+
+- Prompt-based DCE reviewer
+- Reference Confirmation Workflow
+- Multi-discipline review
+
+### Planned
+
+- Automated document classification
+- Review Basis Register generation
+- Engineering Bulletin retrieval
+- Revision delta analysis
+- Copilot Studio adaptive-card configuration
