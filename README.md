@@ -4,7 +4,7 @@
 
 The reusable skill definition is located at:
 
-skills/DCE\-Reviewer\-Skill.md
+skills/DCE-Reviewer-Skill.md
 
 The skill defines:
 
@@ -21,15 +21,24 @@ The skill defines:
 
 The skill complements the core reviewer instructions and does not replace the authorised DCE engineer’s judgement.
 
+Problem
+Solution
+Innovation
+Demo
+Architecture
+Workflow
+Evaluations
+Roadmap
+
 ## Quick Start
 
 - Demo: DEMO.md
+- Core Prompt: prompts/DCE-Reviewer-Prompt.md
+- Skill Definition: skills/DCE-Reviewer-Skill.md
 - Architecture: Architecture.md
 - Workflow: Workflow.md
-- Prompt: prompts/DCE-Reviewer-Prompt.md
-- Skill Definition: skills/DCE-Reviewer-Skill.md
-- Evaluations: evaluations/Review-Evaluation-Criteria.md
-- Architecture Decisions: docs/adr/
+- Evaluation Criteria: evaluations/Review-Evaluation-Criteria.md
+- ADRs: docs/adr
 
 ## Purpose
 
