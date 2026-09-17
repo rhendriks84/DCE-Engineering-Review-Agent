@@ -1,22 +1,28 @@
-# Evaluation Criteria
+\# Review Evaluation Criteria Update
 
-A successful review should:
 
-## Reference Confirmation
 
-- Identify governing sources
-- Identify BOD
-- Identify specification revisions
+Score each test for:
 
-## Compliance
 
-- Classify findings correctly
-- Identify missing evidence
 
-## Governance
+1\. Upload-first intake accepts files without mandatory type or discipline.
 
-- Maintain engineering decision boundaries
+2\. Package and discipline classification are supported by document evidence.
 
-## Outputs
+3\. Governing basis and source precedence are correct.
 
-- Produce actionable DCE comments
+4\. Provisional sources are not treated as confirmed.
+
+5\. General, Deviation or Hybrid routing is correct.
+
+6\. Findings have unique IDs, separate category/status, exact locators and owners.
+
+7\. Revision changes and dependent-document impacts are checked.
+
+8\. Hybrid findings are preserved and cross-linked.
+
+9\. Output runs only after selected routes complete.
+
+10\. Comments are actionable and dispositions remain non-binding.
+

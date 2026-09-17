@@ -1,0 +1,33 @@
+{
+  "package": "DCE GitHub Tomorrow Update",
+  "files": [
+    "AGENTS-UPDATE.md",
+    "Architecture.md",
+    "DEMO-UPDATE.md",
+    "IMPLEMENTATION-CHECKLIST.md",
+    "README-INTEGRATION.md",
+    "UI-PROTOTYPE-REQUIREMENTS.md",
+    "UPDATED-AGENT-INSTRUCTIONS.md",
+    "VALIDATION-REPORT.md",
+    "docs/DCE-Review-Handoff-Record.md",
+    "docs/adr/ADR-003-Multi-Skill-Review-Architecture.md",
+    "docs/adr/ADR-004-Upload-First-Optional-Classification.md",
+    "evaluations/Review-Evaluation-Criteria-Update.md",
+    "examples/Example-05-Upload-First-Single-Line-Diagram.md",
+    "skills/dce-cde-deviation-review.md",
+    "skills/dce-general-technical-review.md",
+    "skills/dce-review-intake.md",
+    "skills/dce-review-output.md"
+  ],
+  "checks": {
+    "four skills documented": true,
+    "upload-first rule present": true,
+    "single-line supported": true,
+    "non-binding authority": true,
+    "handoff documented": true,
+    "no old monolithic skill file": true,
+    "absent: Bryant APAC BOD v1.2 applies by default": true,
+    "absent: final approval authority remains with the agent": true,
+    "absent: submission type is required": true
+  }
+}

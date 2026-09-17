@@ -1,136 +1,70 @@
 # DCE Engineering Review Agent
 
-## DCE Reviewer Skill
-
-The reusable skill definition is located at:
-
-skills/DCE-Reviewer-Skill.md
-
-The skill defines:
-
-- trigger conditions;
-- supported submission types;
-- mandatory reference confirmation;
-- governing\-source precedence;
-- evidence and compliance classifications;
-- revision\-delta review;
-- multidisciplinary interfaces;
-- reviewer authority boundaries;
-- output formats;
-- and final quality checks.
-
-The skill complements the core reviewer instructions and does not replace the authorised DCE engineer’s judgement.
-
-Problem
-Solution
-Innovation
-Demo
-Architecture
-Workflow
-Evaluations
-Roadmap
-
-## Quick Start
-
-- Demo: DEMO.md
-- Core Prompt: prompts/DCE-Reviewer-Prompt.md
-- Skill Definition: skills/DCE-Reviewer-Skill.md
-- Architecture: Architecture.md
-- Workflow: Workflow.md
-- Evaluation Criteria: evaluations/Review-Evaluation-Criteria.md
-- ADRs: docs/adr
-
 ## Purpose
 
-AI-assisted DCE review agent for:
+The DCE Engineering Review Agent is an engineer-in-the-loop design-assurance solution for Microsoft DCE technical reviews.
 
-* MTS reviews
-* CDE reviews
-* Technical exceptions
-* Compliance matrices
-* Technical submittals
+The agent supports:
 
-## Features
+- Master Technical Submittals (MTS)
+- Project and technical submittals
+- Drawings and schematics
+- Electrical single-line diagrams
+- Calculations and schedules
+- Controls and BAS packages
+- Commissioning packages
+- Vendor response packages
+- CDE and D&E reviews
+- Technical exceptions
+- Compliance matrices
+- Vendor exception registers
+- Hybrid technical and deviation packages
 
-* Reference Confirmation Workflow
-* Multi-discipline review
-* Governing-source precedence
-* Compliance assessment
-* Controls review
-* Operational resilience review
-* DCE comment generation
+The agent provides evidence-based, non-binding guidance. Final engineering approval, deviation, waiver and disposition authority remains with the authorised DCE engineer or governance authority.
 
-## Benefits
+---
 
-* Improved review consistency
-* Better traceability
-* Reduced wrong-source reviews
-* Faster engineering reviews
+## Key Innovation
 
-## Differentiators
+Most document-review assistants begin assessing compliance immediately.
 
-Unlike traditional document-review assistants, this agent:
+The DCE Engineering Review Agent first:
 
-* Confirms governing references before review
-* Applies source precedence rules
-* Detects governing-source conflicts
-* Supports multi-discipline DCE reviews
-* Separates engineering recommendations from engineering authority
-* Escalates decisions requiring specialist review
+1. Classifies the uploaded package.
+2. Confirms the governing review basis.
+3. Establishes source precedence.
+4. Identifies conflicts and unresolved assumptions.
+5. Creates a DCE Review Handoff Record.
+6. Routes the package to the appropriate review skill.
+7. Produces traceable findings and controlled outputs.
 
-## Roadmap
+This reduces the risk of technically sound reviews being performed against the wrong specification, Engineering Bulletin, Basis of Design or approved project baseline.
 
-### Current
+---
 
-* Prompt-based DCE reviewer
-* Reference Confirmation Workflow
-* Multi-discipline review
+### Four-Skill Architecture
 
-### Planned
-
-* Automated document classification
-* Review Basis Register generation
-* Engineering Bulletin retrieval
-* Revision delta analysis
-* Copilot Studio adaptive-card configuration
-
-## Validation
-
-Run:
-
-powershell -ExecutionPolicy Bypass -File scripts/validate-repo.ps1
-
-Expected Result:
-
-Repository validation PASSED
-
-## Core Reviewer Instructions
-
-The main reviewer instructions are located in:
-
-DCE-Reviewer-Prompt.md
-
-## Screenshots
-
-### Agent Overview
-
-#### Agent Overview 1
-screenshots/AgentOverview1.png
-
-#### Agent Overview 2
-screenshots/AgentOverview2.png
-
-#### Agent Overview 3
-screenshots/AgentOverview3.png
-
-### Review Process
-
-#### Review Process 1
-screenshots/ReviewProcess1.png
-
-#### Review Process 2
-screenshots/ReviewProcess2.png
-
-### Workflow
-
-screenshots/Workflow.png
+```text
+Upload or reference package
+          |
+          v
+dce-review-intake
+          |
+          v
+DCE Review Handoff Record
+          |
+     +----+----+
+     |         |
+     v         v
+dce-general-  dce-cde-
+technical-    deviation-
+review        review
+     |         |
+     +----+----+
+          |
+          v
+dce-review-output
+          |
+          v
+Controlled DCE deliverable
+```
