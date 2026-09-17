@@ -1,41 +1,46 @@
-# DCE Engineering Review Agent Demo
+\# Four-Skill Demo Scenarios
 
-## Problem
 
-DCE reviewers must review MTSs, CDEs, technical exceptions and submittals against multiple governing sources.
 
-Incorrect source selection can lead to invalid compliance conclusions.
+\## Scenario 1: Electrical Single-Line Diagram
 
-## Innovation
 
-The DCE Engineering Review Agent introduces a mandatory Reference Confirmation Workflow before compliance review.
 
-The reviewer:
+1\. User uploads a drawing without selecting a type.
 
-1. Determines submission type
-2. Confirms governing references
-3. Builds a Review Basis Register
-4. Applies source precedence
-5. Reviews evidence
-6. Creates DCE comments
-7. Escalates engineering decisions
+2\. Intake detects electrical content and routes General Technical Review.
 
-## Example Scenario
+3\. Review identifies governing-source, evidence and interface findings.
 
-### Input
+4\. Output produces the requested comments.
 
-Vendor MTS package
 
-Issues:
 
-- Incorrect BOD referenced
-- Missing BAS points list
-- Engineering Bulletin conflict
+\## Scenario 2: Vendor Exception Register
 
-### Expected Behaviour
 
-1. Reference Confirmation Workflow executes.
-2. Governing source conflict identified.
-3. Missing evidence identified.
-4. Review comments generated.
-5. Engineer decision required.
+
+1\. User uploads the register without selecting CDE.
+
+2\. Intake detects a formal deviation package and routes Deviation Review.
+
+3\. Every vendor-listed item receives a traceable finding and closure status.
+
+4\. Output consolidates the open-item register.
+
+
+
+\## Scenario 3: Hybrid Package
+
+
+
+1\. Intake identifies technical content and formal exceptions.
+
+2\. General and Deviation reviews use the same handoff record.
+
+3\. Overlapping findings are cross-linked.
+
+4\. Output runs only after both routes complete.
+
+
+

@@ -1,79 +1,270 @@
-# DCE Engineering Review Agent: Agent Guide
+# AGENTS.md
 
 ## Purpose
 
-This repository documents and governs the DCE Engineering Review Agent, an engineer-in-the-loop design-assurance assistant for multidisciplinary technical submissions.
+This file is the canonical repository guidance for human contributors and AI coding agents working on the DCE Engineering Review Agent.
 
-## Supported review types
+The objective is to improve the repository without weakening engineering governance, source traceability, stage awareness, evidence requirements, or human decision authority.
 
-* Master Technical Submittal (MTS)
-* Compliance, Deviations and Exceptions (CDE) forms
-* Deviations and Exceptions forms
-* Technical exception requests
-* Compliance matrices and vendor exception registers
-* Product data and equipment submittals
-* Controls, FAT, FWT, SAT and commissioning packages
+## Read Before Making Changes
 
-## Supported disciplines
+Review these files before modifying behaviour:
 
-Architectural, civil, structural, fire protection, fire alarm, plumbing, mechanical, electrical, BAS, EPMS, telecommunications, physical security, commissioning and sustainability.
+1. `README.md`
+2. `AGENTS.md`
+3. the active agent instructions under `agent/` or the maintained orchestration prompt under `prompts/`
+4. `docs/Architecture.md`
+5. `docs/Workflow.md`
+6. `docs/DCE-Review-Handoff-Record.md`
+7. `docs/adr/ADR-001-Reference-Confirmation-Workflow.md`
+8. `docs/adr/ADR-002-Governing-Source-Precedence.md`
+9. `docs/adr/ADR-003-Multi-Skill-Review-Architecture.md`
+10. `docs/adr/ADR-004-Upload-First-Optional-Classification.md`
+11. all four files under `skills/`
+12. `evaluations/Review-Evaluation-Criteria.md`
+13. affected scenarios under `examples/`
 
-## Required workflow
+Where repository paths differ, locate the file by name before making a change. Do not create a duplicate canonical file merely to satisfy an assumed path.
 
-1. Determine the submission type.
-2. Run the mandatory Reference Confirmation Workflow.
-3. Build the Review Basis Register.
-4. Apply the confirmed source-precedence model.
-5. Establish governing requirements and submitted evidence.
-6. Identify previous approved baselines and revision deltas.
-7. Assess compliance, interfaces, controls, resilience, maintainability and commissioning.
-8. Separate confirmed requirements, vendor statements, conflicts and recommendations.
-9. Draft concise, evidence-based review comments.
-10. Escalate specialist decisions to the appropriate authorised engineer.
+## Canonical Architecture
 
-## Non-negotiable safeguards
+Always model the solution as four coordinated skills sharing one DCE Review Handoff Record:
 
-* Do not silently select a BOD, specification revision or project baseline.
-* Do not assume the latest document automatically governs.
-* Do not invent requirements, clauses, values, evidence or precedents.
-* Do not resolve conflicting governing sources by assumption.
-* Do not approve equipment, accept deviations or make the final engineering decision.
-* Do not expose restricted physical-security requirements.
-* Do not classify an item definitively when the governing reference basis is unresolved.
+1. `dce-review-intake`
+2. `dce-general-technical-review`
+3. `dce-cde-deviation-review`
+4. `dce-review-output`
 
-## Repository map
+Required flow:
 
-* `README.md`: project overview and entry point.
-* `DCE-Reviewer-Prompt.md`: core reviewer instructions.
-* `Workflow.md` and `docs/Workflow.md`: review workflow.
-* `Architecture.md` and `docs/Architecture.md`: solution architecture.
-* `Examples.md` or `docs/Examples.md`: expected behaviours and scenarios.
-* `.github/copilot-instructions.md`: repository-wide instructions for GitHub Copilot.
-* `.github/pull\_request\_template.md`: review checklist for changes.
-* `.github/CODEOWNERS`: default ownership routing.
-* `CONTRIBUTING.md`: contribution and validation requirements.
-* `scripts/validate-repo.ps1`: lightweight repository validation.
+```text
+Upload or reference package
+          |
+          v
+  dce-review-intake
+          |
+          v
+DCE Review Handoff Record
+          |
+   +------+------+
+   |             |
+   v             v
+General       Deviation
+Review        Review
+   |             |
+   +------+------+
+          |
+          v
+  dce-review-output
+```
 
-## Change rules for agents
+A package may use the General route, the Deviation route, or both as a Hybrid route. Output must not finalise until every selected route is complete.
 
-When modifying this repository:
+## Mandatory Invariants
 
-1. Read `README.md`, `AGENTS.md`, `DCE-Reviewer-Prompt.md`, and the architecture and workflow documents first.
-2. Make the smallest coherent change that satisfies the issue.
-3. Preserve the reference-confirmation gate, source precedence and engineer decision boundary.
-4. Update examples when behaviour changes.
-5. Update documentation when terminology, scope, workflow or output changes.
-6. Run `powershell -ExecutionPolicy Bypass -File scripts/validate-repo.ps1` before completing the change.
-7. Report what changed, what was validated and any remaining limitations.
+### Reference Confirmation
 
-## Acceptance criteria
+Perform reference confirmation before issuing definitive compliance conclusions. Confirm source applicability, revision, form factor, project context, and design stage where material to the conclusion.
 
-A change is ready when:
+If applicability is unresolved, use explicit provisional language and keep the affected conclusion open.
 
-* required repository files are present;
-* referenced Markdown links resolve;
-* the reviewer instructions remain internally consistent;
-* no hard-coded default BOD is presented as confirmed without applicability confirmation;
-* examples reflect the current workflow;
-* the validation script passes.
+### Governing Source Precedence
 
+Apply confirmed sources in this order:
+
+1. Regulatory and AHJ requirements
+2. Approved deviations, technical exceptions, and Tech Gov decisions
+3. Approved project specifications and BOD
+4. Applicable Engineering Bulletins and amendments
+5. Microsoft Master Specifications
+6. Applicable programme or form-factor BOD
+7. Approved MTS baseline
+8. Vendor submission
+9. Consultant comments
+
+A lower-precedence source cannot override a higher-precedence source without an approved decision. Do not resolve equal-precedence conflicts by date alone.
+
+### Evidence Integrity
+
+Do not invent or silently infer:
+
+- requirements;
+- clauses;
+- values;
+- thresholds;
+- dimensions;
+- setpoints;
+- redundancy criteria;
+- performance targets;
+- acceptance criteria;
+- approvals; or
+- precedent.
+
+Record the evidence gap, request confirmation where material, and qualify the affected conclusion.
+
+### Upload-First Intake
+
+File upload is the primary intake action. Submission type, discipline, project, region, form factor, review scope, and output format are optional hints.
+
+Missing selections must not block review. Document evidence takes precedence over unsupported user-interface selections.
+
+### Stage-Appropriate Review
+
+Assess the submission against the level of definition reasonably expected for the confirmed design stage. Do not request IFC-level detail at Concept, BOD, SDD, 30%, or equivalent stages unless the governing basis requires it.
+
+### Finding Integrity
+
+Each material finding must preserve:
+
+- unique finding ID;
+- originating route;
+- severity;
+- finding category;
+- closure status;
+- governing source and clause where available;
+- exact submission locator;
+- requirement or issue;
+- vendor and A/E position;
+- evidence and gap;
+- technical and business effect;
+- required closure evidence;
+- response party;
+- decision owner; and
+- cross-linked finding IDs where applicable.
+
+Finding category and closure status are separate fields and must not be merged.
+
+### Closure
+
+Close a finding only when revised documentation, calculations, responses, test evidence, or an authorised decision sufficiently addresses the issue.
+
+A statement of intent alone is not closure unless accepted through the governing process.
+
+### Authority Boundary
+
+The agent provides evidence-based, non-binding guidance. Final approval, deviation, waiver, and disposition remain with the authorised DCE engineer or governance authority.
+
+The repository must never imply that the agent has final engineering authority.
+
+## Hybrid Review Requirements
+
+For a genuine Hybrid package:
+
+- intake selects both routes;
+- both routes consume the same handoff record;
+- each route preserves its own finding IDs;
+- related findings are cross-linked rather than merged;
+- neither route overwrites the other route's findings;
+- output waits for both routes to complete; and
+- the authorised decision owner remains explicit.
+
+## Materiality and Owner-Side Review
+
+Prioritise findings affecting:
+
+- compliance;
+- safety;
+- reliability;
+- operability;
+- maintainability;
+- capacity;
+- redundancy;
+- constructability;
+- cost;
+- schedule;
+- commissioning;
+- future approvals; and
+- business outcome.
+
+Avoid immaterial editorial comments and unsupported preferences.
+
+## Files That Must Change Together
+
+When changing routing, governing basis, finding fields, closure logic, authority boundaries, or disposition logic, assess and update the following together:
+
+- active agent instructions;
+- the affected skill files;
+- `docs/Architecture.md`;
+- `docs/Workflow.md`;
+- `docs/DCE-Review-Handoff-Record.md`;
+- applicable ADRs;
+- `evaluations/Review-Evaluation-Criteria.md`;
+- affected example scenarios;
+- `README.md`; and
+- repository validation rules.
+
+Do not update only one representation of a behavioural rule.
+
+## Evaluation Requirements
+
+Every material behavioural change must have at least one scenario demonstrating:
+
+- input conditions;
+- expected intake classification;
+- expected governing-basis status;
+- expected route;
+- expected finding category;
+- expected closure status;
+- prohibited behaviour; and
+- success criteria.
+
+Evaluation coverage must include:
+
+- upload-first intake;
+- unconfirmed applicability;
+- lower-precedence source conflict;
+- equal-precedence conflict;
+- missing essential evidence;
+- revision delta and undeclared change;
+- formal deviation;
+- hybrid routing and cross-linking;
+- output sequencing;
+- premature closure prevention;
+- premature approval prevention; and
+- specialist or Tech Gov escalation.
+
+## Public Repository Information Boundary
+
+Do not commit:
+
+- Microsoft Confidential or highly confidential content;
+- project-specific drawings, calculations, specifications, or review comments;
+- proprietary standards or specification text;
+- restricted physical-security information;
+- credentials, tokens, environment identifiers, or private links;
+- personal information; or
+- vendor-confidential information.
+
+Use synthetic, redacted, or explicitly approved examples.
+
+## Validation
+
+Run after every material change:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/validate-repo.ps1
+```
+
+Do not state that validation passed unless the command completed successfully.
+
+Also inspect:
+
+```text
+git diff --check
+git status
+git diff --cached --stat
+```
+
+## Definition of Done
+
+A change is complete only when:
+
+- the architecture remains internally consistent;
+- all affected files are updated together;
+- governing-source precedence is unchanged or an ADR records the approved change;
+- authority boundaries remain explicit;
+- no unsupported requirement or conclusion has been introduced;
+- scenarios cover the changed behaviour;
+- validation passes;
+- no confidential or project-sensitive material is included; and
+- the pull request explains what changed, why it changed, governance impact, validation performed, and remaining limitations.
