@@ -3,7 +3,6 @@ $ErrorActionPreference = "Stop"
 $requiredFiles = @(
     "README.md",
     "AGENTS.md",
-    "DCE-Reviewer-Prompt.md",
     "CONTRIBUTING.md",
     ".github/copilot-instructions.md",
     ".github/CODEOWNERS",
