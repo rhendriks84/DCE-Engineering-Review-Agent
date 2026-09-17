@@ -1,1 +1,23 @@
+# Repository owner
 * @rhendriks84
+
+# Documentation and governance
+README.md @rhendriks84
+AGENTS.md @rhendriks84
+SECURITY.md @rhendriks84
+CONTRIBUTING.md @rhendriks84
+
+# Architecture and ADRs
+docs/** @rhendriks84
+
+# Review logic
+skills/** @rhendriks84
+prompts/** @rhendriks84
+
+# Evaluations and examples
+evaluations/** @rhendriks84
+examples/** @rhendriks84
+
+# Validation and automation
+scripts/** @rhendriks84
+.github/workflows/** @rhendriks84
